@@ -15,7 +15,7 @@ import { AnmeldenComponent }    from './components/anmelden.component';
     RouterModule.forRoot([
       {
         path: '',
-        redirectTo: '/anmelden'
+        redirectTo: '/anmelden',
         pathMatch: 'full'
       },
       {
