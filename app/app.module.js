@@ -12,7 +12,9 @@ var core_1 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
 var forms_1 = require('@angular/forms');
 var ng2_charts_1 = require('ng2-charts');
+var router_1 = require('@angular/router');
 var app_component_1 = require('./components/app.component');
+var anmelden_component_1 = require('./components/anmelden.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -22,9 +24,21 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
                 ng2_charts_1.ChartsModule,
+                router_1.RouterModule.forRoot([
+                    {
+                        path: '',
+                        redirectTo: '/anmelden',
+                        pathMatch: 'full'
+                    },
+                    {
+                        path: 'anmelden',
+                        component: anmelden_component_1.AnmeldenComponent
+                    }
+                ])
             ],
             declarations: [
                 app_component_1.AppComponent,
+                anmelden_component_1.AnmeldenComponent
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]
