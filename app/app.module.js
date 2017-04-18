@@ -15,6 +15,8 @@ var ng2_charts_1 = require('ng2-charts');
 var router_1 = require('@angular/router');
 var app_component_1 = require('./components/app.component');
 var anmelden_component_1 = require('./components/anmelden.component');
+var overview_component_1 = require('./components/overview.component');
+var options_component_1 = require('./components/options.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,12 +35,22 @@ var AppModule = (function () {
                     {
                         path: 'anmelden',
                         component: anmelden_component_1.AnmeldenComponent
+                    },
+                    {
+                        path: 'overview',
+                        component: overview_component_1.OverviewComponent
+                    },
+                    {
+                        path: 'options',
+                        component: options_component_1.OptionsComponent
                     }
                 ])
             ],
             declarations: [
                 app_component_1.AppComponent,
-                anmelden_component_1.AnmeldenComponent
+                anmelden_component_1.AnmeldenComponent,
+                overview_component_1.OverviewComponent,
+                options_component_1.OptionsComponent
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

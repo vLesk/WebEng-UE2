@@ -2,10 +2,12 @@ import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
-import { RouterModule } from '@angular/router';
+import { RouterModule, RouterLinkWithHref } from '@angular/router';
 
 import { AppComponent }         from './components/app.component';
 import { AnmeldenComponent }    from './components/anmelden.component';
+import { OverviewComponent }    from './components/overview.component';
+import { OptionsComponent }    from './components/options.component';
 
 @NgModule({
   imports: [
@@ -21,12 +23,22 @@ import { AnmeldenComponent }    from './components/anmelden.component';
       {
         path: 'anmelden',
         component: AnmeldenComponent
+      },
+      {
+        path: 'overview',
+        component: OverviewComponent
+      },
+      {
+        path: 'options',
+        component: OptionsComponent
       }
     ])
   ],
   declarations: [
     AppComponent,
-    AnmeldenComponent
+    AnmeldenComponent,
+    OverviewComponent,
+    OptionsComponent
   ],
   providers: [
   ],

@@ -9,17 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AppComponent = (function () {
-    function AppComponent() {
+var OptionsComponent = (function () {
+    function OptionsComponent() {
     }
-    AppComponent = __decorate([
+    OptionsComponent = __decorate([
         core_1.Component({
-            selector: 'my-app',
-            template: "\n  \t<router-outlet></router-outlet>\n  "
+            selector: 'options',
+            templateUrl: '/app/views/options.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], AppComponent);
-    return AppComponent;
+    ], OptionsComponent);
+    return OptionsComponent;
 }());
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+exports.OptionsComponent = OptionsComponent;
+//# sourceMappingURL=options.component.js.map
