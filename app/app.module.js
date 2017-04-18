@@ -17,6 +17,7 @@ var app_component_1 = require('./components/app.component');
 var anmelden_component_1 = require('./components/anmelden.component');
 var overview_component_1 = require('./components/overview.component');
 var options_component_1 = require('./components/options.component');
+var details_component_1 = require('./components/details.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -43,6 +44,10 @@ var AppModule = (function () {
                     {
                         path: 'options',
                         component: options_component_1.OptionsComponent
+                    },
+                    {
+                        path: 'details',
+                        component: details_component_1.DetailsComponent
                     }
                 ])
             ],
@@ -50,7 +55,8 @@ var AppModule = (function () {
                 app_component_1.AppComponent,
                 anmelden_component_1.AnmeldenComponent,
                 overview_component_1.OverviewComponent,
-                options_component_1.OptionsComponent
+                options_component_1.OptionsComponent,
+                details_component_1.DetailsComponent
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]
