@@ -1,9 +1,19 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>BIG Smart Home - Optionen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../styles/style.css">
+</head>
+<body data-decimal-separator="," data-grouping-separator=".">
+
 <div role="navigation" aria-label="jumplinks">
   <a href="#deviceheadline" class="accessibility">Zum Inhalt springen</a>
 </div>
 
 <header aria-labelledby="bannerheadline">
-  <a routerLink="/overview"><img class="title-image" src="../../images/big-logo-small.png" alt="BIG Smart Home logo"></a>
+  <a href="overview.html"><img class="title-image" src="../../images/big-logo-small.png" alt="BIG Smart Home logo"></a>
 
   <h1 class="header-title" id="bannerheadline">
     BIG Smart Home
@@ -14,10 +24,10 @@
       <li class="nav-items">
         <ul>
           <li>
-            <a routerLink="/options" class="button" accesskey="2">Optionen</a>
+            <a href="options.html" class="button" accesskey="2">Optionen</a>
           </li>
           <li>
-            <a routerLink="/anmelden" class="button" accesskey="1">Abmelden</a>
+            <a href="login.html" class="button" accesskey="1">Abmelden</a>
           </li>
         </ul>
       </li>
@@ -74,12 +84,12 @@
 
             <form class="update-form" method="post">
               <label class="update-form-field" id="current-value">
-                <span class="current-value">derzeit: 0</span>
+                <span class="current-value">derzeit: {{temp}}</span>
               </label>
               <label class="accessibility" for="new-value">Bitte gewünschten Wert eingeben.</label>
-              <input type="number" step="0.01" min="0" max="50" id="new-value" value="1"
+              <input type="number" #tempInput step="0.01" min="0" max="50" id="new-value" value="1"
                      class="update-form-field form-input" name="new-value" required>
-              <input type="submit" id="submit-value" class="update-form-field button" name="submit-value"
+              <input type="submit" (click)="onTempChangeClicked(tempInput.value)" id="submit-value" class="update-form-field button" name="submit-value"
                      value="Wert setzen">
             </form>
           </div>
@@ -99,15 +109,15 @@
 
             <form class="update-form" method="post">
               <label class="update-form-field" id="current-value">
-                <span class="current-value">derzeit: Standby</span>
+                <span class="current-value">derzeit: {{state}}</span>
               </label>
               <label class="accessibility" for="new-value">Bitte gewünschten Wert aus Menü auswählen.</label>
-              <select id="new-value" class="update-form-field form-input" name="new-value" required>
+              <select #stateSelect id="new-value" class="update-form-field form-input" name="new-value" required>
                 <option>Aus</option>
                 <option>Ein</option>
                 <option selected>Standby</option>
               </select>
-              <input type="submit" id="submit-value" class="update-form-field button" name="submit-value"
+              <input type="submit" (click) = "onStateChangeClicked(stateSelect.value)" id="submit-value" class="update-form-field button" name="submit-value"
                      value="Wert setzen">
             </form>
           </div>
@@ -128,13 +138,13 @@
             <form class="update-form" method="post">
 
               <label class="update-form-field" id="current-value">
-                <span class="current-value">derzeit: Aktiviert</span>
+                <span class="current-value">derzeit: {{active}}</span>
               </label>
 
               <label class="accessibility" for="new-value">Bitte gewünschten Wert auswählen.</label>
-              <input type="checkbox" id="new-value" class="update-checkbox-input form-input" checked
+              <input type="checkbox" #deviceOnOff id="new-value" class="update-checkbox-input form-input" checked
                      name="new-value">
-              <input type="submit" id="submit-value" class="update-form-field button" name="submit-value"
+              <input type="submit" (click)="onOnOffButtonClicked(deviceOnOff.checked)"  id="submit-value" class="update-form-field button" name="submit-value"
                      value="Wert setzen">
             </form>
           </div>
@@ -147,3 +157,5 @@
 <footer>
   © 2017 BIG Smart Home
 </footer>
+</body>
+</html>

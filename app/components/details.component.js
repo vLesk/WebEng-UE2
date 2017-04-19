@@ -11,7 +11,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var DetailsComponent = (function () {
     function DetailsComponent() {
+        this.temp = 1;
+        this.state = "Standby";
+        this.active = "Aktiviert";
     }
+    DetailsComponent.prototype.onTempChangeClicked = function (tempInput) {
+        if (tempInput <= 50 && tempInput >= 0) {
+            this.temp = tempInput;
+        }
+    };
+    DetailsComponent.prototype.onStateChangeClicked = function (name) {
+        this.state = name;
+    };
+    DetailsComponent.prototype.onOnOffButtonClicked = function (active) {
+        if (active == true) {
+            this.active = "Aktiviert";
+        }
+        else {
+            this.active = "Deaktiviert";
+        }
+    };
     DetailsComponent = __decorate([
         core_1.Component({
             selector: 'details',
