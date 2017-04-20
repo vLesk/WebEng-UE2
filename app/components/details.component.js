@@ -14,20 +14,46 @@ var DetailsComponent = (function () {
         this.temp = 1;
         this.state = "Standby";
         this.active = "Aktiviert";
+        this.templog = "6.3.2017 10:01:30: 20 -> 25";
+        this.statelog = "6.3.2017 10:02:32: Ein -> Standby";
+        this.activelog = "6.3.2017 10:03:30: Aus -> An";
+        this.date = new Date();
     }
     DetailsComponent.prototype.onTempChangeClicked = function (tempInput) {
-        if (tempInput <= 50 && tempInput >= 0) {
+        if (tempInput <= 50 && tempInput >= 0 && tempInput != "" && tempInput != this.temp) {
+            this.date = new Date(Date.now());
+            this.templog += "\n" + this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + this.date.getFullYear()
+                + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds() + ": " + this.temp
+                + " -> " + tempInput;
             this.temp = tempInput;
         }
     };
     DetailsComponent.prototype.onStateChangeClicked = function (name) {
-        this.state = name;
+        if (this.state != name) {
+            this.date = new Date(Date.now());
+            this.statelog += "\n" + this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + this.date.getFullYear()
+                + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds() + ": " + this.state
+                + " -> " + name;
+            this.state = name;
+        }
     };
     DetailsComponent.prototype.onOnOffButtonClicked = function (active) {
         if (active == true) {
+            if (this.active == "Deaktiviert") {
+                this.date = new Date(Date.now());
+                this.activelog += "\n" + this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + this.date.getFullYear()
+                    + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds() + ": " + "Aus"
+                    + " -> " + "An";
+            }
             this.active = "Aktiviert";
         }
         else {
+            if (this.active == "Aktiviert") {
+                this.date = new Date(Date.now());
+                this.activelog += "\n" + this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + this.date.getFullYear()
+                    + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds() + ": " + "An"
+                    + " -> " + "Aus";
+            }
             this.active = "Deaktiviert";
         }
     };

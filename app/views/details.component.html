@@ -13,7 +13,7 @@
 </div>
 
 <header aria-labelledby="bannerheadline">
-  <a href="overview.html"><img class="title-image" src="../../images/big-logo-small.png" alt="BIG Smart Home logo"></a>
+  <a href="./overview.component.html"><img class="title-image" src="../../images/big-logo-small.png" alt="BIG Smart Home logo"></a>
 
   <h1 class="header-title" id="bannerheadline">
     BIG Smart Home
@@ -77,7 +77,7 @@
         </div>
         <div class="details-data">
           <label class="accessibility" for="details-log">Letzte Werteänderungen</label>
-          <textarea id="details-log" class="detail-logs" placeholder="Gerätelog" readonly rows="6">6.3.2017 10:01:30: 20 -> 25
+          <textarea id="details-log" class="detail-logs" placeholder="Gerätelog" readonly rows="6">{{templog}}
           </textarea>
           <div class="details-settings">
             <h3 class="details-headline">Temperatur einstellen</h3>
@@ -103,7 +103,7 @@
         </div>
         <div class="details-data">
           <label class="accessibility" for="details-log">Letzte Werteänderungen</label>
-          <textarea id="details-log" class="detail-logs" placeholder="Gerätelog" readonly rows="6">6.3.2017 10:02:32: Ein -> Standby</textarea>
+          <textarea id="details-log" class="detail-logs" placeholder="Gerätelog" readonly rows="6">{{statelog}}</textarea>
           <div class="details-settings">
             <h3 class="details-headline">Gerätezustand einstellen</h3>
 
@@ -131,7 +131,7 @@
         </div>
         <div class="details-data">
           <label class="accessibility" for="details-log">Letzte Werteänderungen</label>
-          <textarea id="details-log" class="detail-logs" placeholder="Gerätelog" readonly rows="6">6.3.2017 10:03:30: Aus -> An</textarea>
+          <textarea id="details-log" class="detail-logs" placeholder="Gerätelog" readonly rows="6">{{activelog}}</textarea>
           <div class="details-settings">
             <h3 class="details-headline">Ein-/Ausschalten</h3>
 
