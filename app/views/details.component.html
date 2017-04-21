@@ -73,7 +73,12 @@
       <!-- Steuerung für kontinuierliche Werte -->
       <div class="details-outer">
         <div class="details-image-container">
-          <img class="details-image" src="../../images/placeholder_continuous.PNG">
+            <canvas baseChart id = "lineChart" width="757" height="379"
+                    [datasets] = "lineChartData"
+                    [labels] = "lineChartLabels"
+                    [legend] = "lineChartLegend"
+                    [chartType] = "lineChartType"
+                    [options] = "lineChartOptions"></canvas>
         </div>
         <div class="details-data">
           <label class="accessibility" for="details-log">Letzte Werteänderungen</label>

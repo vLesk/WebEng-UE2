@@ -6,7 +6,8 @@ import {Component} from '@angular/core';
 })
 
 export class DetailsComponent {
-    temp:number = 1;
+
+    temp:number = 25;
 
     state:string = "Standby";
 
@@ -20,8 +21,34 @@ export class DetailsComponent {
 
     date:Date = new Date();
 
+    lineChartData:Array<any> = [
+        {data: [20,25,16,40,26,20,25], label: 'Verlauf'}
+    ];
+
+    lineChartLabels:Array<any> = ['4.3.2017 11:05:40','4.3.2017 13:15:55','5.3.2017 9:00:00',
+        '5.3.2017 9:00:00', '5.3.2017 10:44:33', '5.3.2017 21:55:22','6.3.2017 10:01:30'];
+
+    lineChartLegend:boolean = true;
+
+    lineChartOptions:any = {
+        responsive: true
+    };
+
+    lineChartType:string = 'line';
+    //PIIIIIIINK
+    lineChartColors:Array<any> = [
+        {
+            backgroundColor: '4D5360',
+            borderColor: '#4D5360',
+            pointBackgroundColor: '4D5360',
+            pointBorderColor: '#fff',
+            pointHoverBackgroundColor: '#fff',
+            pointHoverBorderColor: 'rgba(148,159,177,0.8)'
+        }
+    ]
+
     onTempChangeClicked(tempInput:number){
-        if(tempInput <= 50 && tempInput >= 0 && tempInput != "" && tempInput != this.temp){
+        if(tempInput <= 50 && tempInput >= 0 && tempInput != this.temp){
             this.date = new Date(Date.now());
             this.templog += "\n" + this.date.getDate() + "." + (this.date.getMonth()+1) + "." + this.date.getFullYear()
                 + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds() +": " + this.temp
