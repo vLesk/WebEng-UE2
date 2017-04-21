@@ -11,34 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var DetailsComponent = (function () {
     function DetailsComponent() {
-        this.temp = 25;
+        this.temp = 1;
         this.state = "Standby";
         this.active = "Aktiviert";
         this.templog = "6.3.2017 10:01:30: 20 -> 25";
         this.statelog = "6.3.2017 10:02:32: Ein -> Standby";
         this.activelog = "6.3.2017 10:03:30: Aus -> An";
         this.date = new Date();
-        this.lineChartData = [
-            { data: [20, 25, 16, 40, 26, 20, 25], label: 'Verlauf' }
-        ];
-        this.lineChartLabels = ['4.3.2017 11:05:40', '4.3.2017 13:15:55', '5.3.2017 9:00:00',
-            '5.3.2017 9:00:00', '5.3.2017 10:44:33', '5.3.2017 21:55:22', '6.3.2017 10:01:30'];
-        this.lineChartLegend = true;
-        this.lineChartOptions = {
-            responsive: true
-        };
-        this.lineChartType = 'line';
-        //PIIIIIIINK
-        this.lineChartColors = [
-            {
-                backgroundColor: '4D5360',
-                borderColor: '#4D5360',
-                pointBackgroundColor: '4D5360',
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: 'rgba(148,159,177,0.8)'
-            }
-        ];
     }
     DetailsComponent.prototype.onTempChangeClicked = function (tempInput) {
         if (tempInput <= 50 && tempInput >= 0 && tempInput != this.temp) {
