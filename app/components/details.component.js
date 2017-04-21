@@ -20,7 +20,7 @@ var DetailsComponent = (function () {
         this.date = new Date();
     }
     DetailsComponent.prototype.onTempChangeClicked = function (tempInput) {
-        if (tempInput <= 50 && tempInput >= 0 && tempInput != "" && tempInput != this.temp) {
+        if (tempInput <= 50 && tempInput >= 0 && tempInput != 0 && (tempInput != this.temp)) {
             this.date = new Date(Date.now());
             this.templog += "\n" + this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + this.date.getFullYear()
                 + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds() + ": " + this.temp
