@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var header_component_1 = require('./header.component');
 var OverviewComponent = (function () {
     function OverviewComponent() {
         this.angemeldet = true;
@@ -17,8 +16,7 @@ var OverviewComponent = (function () {
     OverviewComponent = __decorate([
         core_1.Component({
             selector: 'overview',
-            templateUrl: '/app/views/overview.component.html',
-            directives: [header_component_1.HeaderComponent]
+            templateUrl: '/app/views/overview.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], OverviewComponent);

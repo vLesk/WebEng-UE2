@@ -9,7 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var header_component_1 = require('./header.component');
 var OptionsComponent = (function () {
     function OptionsComponent() {
         this.angemeldet = true;
@@ -17,8 +16,7 @@ var OptionsComponent = (function () {
     OptionsComponent = __decorate([
         core_1.Component({
             selector: 'options',
-            templateUrl: '/app/views/options.component.html',
-            directives: [header_component_1.HeaderComponent]
+            templateUrl: '/app/views/options.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], OptionsComponent);

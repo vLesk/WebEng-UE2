@@ -3,8 +3,7 @@ import { HeaderComponent } from './header.component';
 
 @Component({
   selector: 'options',
-  templateUrl: '/app/views/options.component.html',
-  directives: [HeaderComponent]
+  templateUrl: '/app/views/options.component.html'
 })
 
 export class OptionsComponent {

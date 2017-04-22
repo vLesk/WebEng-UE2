@@ -10,7 +10,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ng2_charts_1 = require("ng2-charts");
-var header_component_1 = require('./header.component');
 var DetailsComponent = (function () {
     function DetailsComponent() {
         this.angemeldet = true;
@@ -111,8 +110,7 @@ var DetailsComponent = (function () {
     DetailsComponent = __decorate([
         core_1.Component({
             selector: 'details',
-            templateUrl: '/app/views/details.component.html',
-            directives: [header_component_1.HeaderComponent]
+            templateUrl: '/app/views/details.component.html'
         }), 
         __metadata('design:paramtypes', [])
     ], DetailsComponent);

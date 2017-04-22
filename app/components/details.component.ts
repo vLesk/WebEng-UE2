@@ -5,8 +5,7 @@ import { HeaderComponent } from './header.component';
 
 @Component({
   selector: 'details',
-  templateUrl: '/app/views/details.component.html',
-  directives: [HeaderComponent]
+  templateUrl: '/app/views/details.component.html'
 })
 
 export class DetailsComponent {

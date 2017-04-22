@@ -4,8 +4,7 @@ import { HeaderComponent } from './header.component';
 
 @Component({
   selector: 'overview',
-  templateUrl: '/app/views/overview.component.html',
-  directives: [HeaderComponent]
+  templateUrl: '/app/views/overview.component.html'
 })
 
 export class OverviewComponent {

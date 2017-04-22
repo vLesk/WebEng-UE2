@@ -3,8 +3,7 @@ import { HeaderComponent } from './header.component';
 
 @Component({
   selector: 'anmelden',
-  templateUrl: '/app/views/anmelden.component.html',
-  directives: [HeaderComponent]
+  templateUrl: '/app/views/anmelden.component.html'
 })
 
 export class AnmeldenComponent {
