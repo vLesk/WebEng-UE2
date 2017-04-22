@@ -62,12 +62,13 @@
 
       <!-- Steuerung für kontinuierliche Werte -->
       <div class="details-outer">
-        <div class="details-image-container">
+        <div class="details-image-container" >
             <canvas baseChart id = "lineChart" width="757" height="379"
                     [datasets] = "lineChartData"
                     [labels] = "lineChartLabels"
                     [legend] = "lineChartLegend"
                     [chartType] = "lineChartType"
+                    [colors] = "lineChartColors"
                     [options] = "lineChartOptions"></canvas>
         </div>
         <div class="details-data">
