@@ -1,0 +1,23 @@
+<a routerLink="/overview"><img class="title-image" src="../../images/big-logo-small.png" alt="BIG Smart Home logo"></a>
+
+<h1 class="header-title" id="bannerheadline">
+  BIG Smart Home
+</h1>
+<nav aria-labelledby="navigationheadline">
+  <h2 class="accessibility" id="navigationheadline">Navigation</h2>
+  <ul class="navigation-list">
+    <li class="nav-items">
+      <ul>
+        <li>
+          <a routerLink="/options" class="button" accesskey="2" *ngIf="angemeldet">Optionen</a>
+        </li>
+        <li>
+          <a routerLink="/anmelden" class="button" accesskey="1" *ngIf="angemeldet">Abmelden</a>
+        </li>
+      </ul>
+    </li>
+    <li class="overflow-icon">
+      <a href="#" class="button" accesskey="1">☰</a>
+    </li>
+  </ul>
+</nav>

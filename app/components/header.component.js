@@ -9,20 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var header_component_1 = require('./header.component');
-var OptionsComponent = (function () {
-    function OptionsComponent() {
-        this.angemeldet = true;
+var HeaderComponent = (function () {
+    function HeaderComponent() {
     }
-    OptionsComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Boolean)
+    ], HeaderComponent.prototype, "angemeldet", void 0);
+    HeaderComponent = __decorate([
         core_1.Component({
-            selector: 'options',
-            templateUrl: '/app/views/options.component.html',
-            directives: [header_component_1.HeaderComponent]
+            selector: 'header',
+            templateUrl: '/app/views/header.component.html'
         }), 
         __metadata('design:paramtypes', [])
-    ], OptionsComponent);
-    return OptionsComponent;
+    ], HeaderComponent);
+    return HeaderComponent;
 }());
-exports.OptionsComponent = OptionsComponent;
-//# sourceMappingURL=options.component.js.map
+exports.HeaderComponent = HeaderComponent;
+//# sourceMappingURL=header.component.js.map

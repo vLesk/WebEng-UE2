@@ -1,12 +1,17 @@
 import {Component, ViewChild} from '@angular/core';
 import {BaseChartDirective} from "ng2-charts";
 
+import { HeaderComponent } from './header.component';
+
 @Component({
   selector: 'details',
-  templateUrl: '/app/views/details.component.html'
+  templateUrl: '/app/views/details.component.html',
+  directives: [HeaderComponent]
 })
 
 export class DetailsComponent {
+    angemeldet:boolean = true;
+
     temp:number = 25;
 
     state:string = "Standby";

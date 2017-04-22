@@ -10,6 +10,7 @@ import { OverviewComponent }    from './components/overview.component';
 import { OptionsComponent }    from './components/options.component';
 import { DetailsComponent }    from './components/details.component';
 import { FooterComponent }    from './components/footer.component';
+import { HeaderComponent }    from './components/header.component';
 
 @NgModule({
   imports: [
@@ -46,7 +47,8 @@ import { FooterComponent }    from './components/footer.component';
     OverviewComponent,
     OptionsComponent,
     DetailsComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   providers: [
   ],
