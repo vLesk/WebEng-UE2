@@ -9,6 +9,7 @@ import { AnmeldenComponent }    from './components/anmelden.component';
 import { OverviewComponent }    from './components/overview.component';
 import { OptionsComponent }    from './components/options.component';
 import { DetailsComponent }    from './components/details.component';
+import { FooterComponent }    from './components/footer.component';
 
 @NgModule({
   imports: [
@@ -44,7 +45,8 @@ import { DetailsComponent }    from './components/details.component';
     AnmeldenComponent,
     OverviewComponent,
     OptionsComponent,
-    DetailsComponent
+    DetailsComponent,
+    FooterComponent
   ],
   providers: [
   ],

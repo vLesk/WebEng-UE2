@@ -18,6 +18,7 @@ var anmelden_component_1 = require('./components/anmelden.component');
 var overview_component_1 = require('./components/overview.component');
 var options_component_1 = require('./components/options.component');
 var details_component_1 = require('./components/details.component');
+var footer_component_1 = require('./components/footer.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -56,7 +57,8 @@ var AppModule = (function () {
                 anmelden_component_1.AnmeldenComponent,
                 overview_component_1.OverviewComponent,
                 options_component_1.OptionsComponent,
-                details_component_1.DetailsComponent
+                details_component_1.DetailsComponent,
+                footer_component_1.FooterComponent
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]
