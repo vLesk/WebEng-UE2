@@ -12,11 +12,14 @@
     <h2 class="main-headline" id="devicesheadline">Geräte</h2>
     <div class="devices">
       <div class="device-outer" data-device-id="a79acab4-e88b-11e6-bf01-fe55135034f3">
-        <a routerLink="/details" class="device"
+        <a [routerLink] ="applianceNameActive[0] ? '/details' : null" id = "device1" class="device"
            title="Genauere Informationen zu diesem Thermometer">
           <dl class="device-properties">
             <dt>Anzeigename</dt>
-            <dd class="device-displayname">Heizkörper Esszimmer</dd>
+            <dd id = "nameLabel1" *ngIf="applianceNameActive[0]" class="device-displayname">{{applianceName1}}</dd>
+            <dd class = "inputBox" *ngIf="!applianceNameActive[0]">
+              <input #input1 [value]="applianceName1" [(ngModel)]="applianceName1" type="text" id = "input1" />
+            </dd>
             <dt>Gerätetyp</dt>
             <dd class="device-type">Heizkörperthermostat</dd>
             <dt>Gerätename</dt>
@@ -28,12 +31,12 @@
           </div>
         </a>
         <ul class="device-actions">
-          <li><a href=""><img class="device-edit" src="../../images/edit.png" alt="edit device"></a></li>
-          <li><a href=""><img class="device-remove" src="../../images/remove.png" alt="remove device"></a></li>
+          <li><a ><img class="device-edit" (click)="onClickSetName1()"  src="../../images/edit.png" alt="edit device"></a></li>
+          <li><a ><img class="device-remove" (click)="onClickSetName1()" src="../../images/remove.png" alt="remove device"></a></li>
         </ul>
       </div>
       <div class="device-outer" data-device-id="19ff7d47-bd80-4a5d-adfb-bc77558facad">
-        <a routerLink="/details" class="device"
+        <a [routerLink] ="applianceNameActive[1] ? '/details' : null" id = "device2" class="device"
            title="Genauere Informationen zu diesem Thermometer">
 
           <div class="device-image-container">
@@ -42,7 +45,10 @@
           </div>
           <dl class="device-properties">
             <dt>Anzeigename</dt>
-            <dd class="device-displayname">Heizkörper Badezimmer</dd>
+            <dd id = "nameLabel2" *ngIf="applianceNameActive[1]" class="device-displayname">{{applianceName2}}</dd>
+            <dd class = "inputBox" *ngIf="!applianceNameActive[1]">
+              <input  #input2 [value]="applianceName2" [(ngModel)]="applianceName2" type="text" id = "input2" />
+            </dd>
             <dt>Gerätetyp</dt>
             <dd class="device-type">Heizkörperthermostat</dd>
             <dt>Gerätename</dt>
@@ -50,16 +56,19 @@
           </dl>
         </a>
         <ul class="device-actions">
-          <li><a href=""><img class="device-edit" src="../../images/edit.png" alt="edit device"></a></li>
-          <li><a href=""><img class="device-remove" src="../../images/remove.png" alt="remove device"></a></li>
+          <li><a ><img class="device-edit" (click)="onClickSetName2()" src="../../images/edit.png" alt="edit device"></a></li>
+          <li><a ><img class="device-remove" (click)="onClickSetName2()" src="../../images/remove.png" alt="remove device"></a></li>
         </ul>
       </div>
       <div class="device-outer" data-device-id="38acc35d-40cc-4d56-bccd-da7da5c20cc4">
-        <a routerLink="/details" class="device"
+        <a [routerLink] ="applianceNameActive[2] ? '/details' : null" id = "device3" class="device"
            title="Genauere Informationen zu diesem Beleuchtungselement">
           <dl class="device-properties">
             <dt>Anzeigename</dt>
-            <dd class="device-displayname">Beleuchtung Außen</dd>
+            <dd id = "nameLabel3" *ngIf="applianceNameActive[2]" class="device-displayname">{{applianceName3}}</dd>
+            <dd class = "inputBox" *ngIf="!applianceNameActive[2]">
+              <input #input3 [value]="applianceName3" [(ngModel)]="applianceName3" type="text" id = "input3" />
+            </dd>
             <dt>Gerätetyp</dt>
             <dd class="device-type">Glühbirne</dd>
             <dt>Gerätename</dt>
@@ -71,19 +80,22 @@
           </div>
         </a>
         <ul class="device-actions">
-          <li><a href=""><img class="device-edit" src="../../images/edit.png" alt="edit device"></a></li>
-          <li><a href=""><img class="device-remove" src="../../images/remove.png" alt="remove device"></a></li>
+          <li><a ><img class="device-edit" (click)="onClickSetName3()" src="../../images/edit.png" alt="edit device"></a></li>
+          <li><a ><img class="device-remove" (click)="onClickSetName3()" src="../../images/remove.png" alt="remove device"></a></li>
         </ul>
       </div>
       <div class="device-outer" data-device-id="11dfe2fd-c0e8-44cb-b788-6eec3e509236">
-        <a routerLink="/details" class="device"
+        <a [routerLink] ="applianceNameActive[3] ? '/details' : null" id = "device4" class="device"
            title="Genauere Informationen zu diesem Beleuchtungselement">
           <div class="device-image-container">
             <img class="device-image" width="180" height="180" src="../../images/bulb.svg" alt="aktivierte Glühbirne">
           </div>
           <dl class="device-properties">
             <dt>Anzeigename</dt>
-            <dd class="device-displayname">Beleuchtung Küche</dd>
+            <dd id = "nameLabel4" *ngIf="applianceNameActive[3]" class="device-displayname">{{applianceName4}}</dd>
+            <dd class = "inputBox" *ngIf="!applianceNameActive[3]">
+              <input #input4 [value]="applianceName4" [(ngModel)]="applianceName4" type="text" id = "input4" />
+            </dd>
             <dt>Gerätetyp</dt>
             <dd class="device-type">Glühbirne</dd>
             <dt>Gerätename</dt>
@@ -91,16 +103,19 @@
           </dl>
         </a>
         <ul class="device-actions">
-          <li><a href=""><img class="device-edit" src="../../images/edit.png" alt="edit device"></a></li>
-          <li><a href=""><img class="device-remove" src="../../images/remove.png" alt="remove device"></a></li>
+          <li><a><img class="device-edit" (click)="onClickSetName4()" src="../../images/edit.png" alt="edit device"></a></li>
+          <li><a><img class="device-remove" (click)="onClickSetName4()" src="../../images/remove.png" alt="remove device"></a></li>
         </ul>
       </div>
       <div class="device-outer" data-device-id="2c4380ad-42cc-450f-abab-2f09a3284e35">
-        <a routerLink="/details" class="device"
+        <a [routerLink] ="applianceNameActive[4] ? '/details' : null" id = "device5" class="device"
            title="Genauere Informationen zu dieser Webcam">
           <dl class="device-properties">
             <dt>Anzeigename</dt>
-            <dd class="device-displayname">Kamera Vordertür</dd>
+            <dd id = "nameLabel5" *ngIf="applianceNameActive[4]" class="device-displayname">{{applianceName5}}</dd>
+            <dd class = "inputBox" *ngIf="!applianceNameActive[4]">
+              <input #input5 [value]="applianceName5" [(ngModel)]="applianceName5" type="text" id = "input5" />
+            </dd>
             <dt>Gerätetyp</dt>
             <dd class="device-type">Überwachungskamera</dd>
             <dt>Gerätename</dt>
@@ -111,19 +126,22 @@
           </div>
         </a>
         <ul class="device-actions">
-          <li><a href=""><img class="device-edit" src="../../images/edit.png" alt="edit device"></a></li>
-          <li><a href=""><img class="device-remove" src="../../images/remove.png" alt="remove device"></a></li>
+          <li><a><img class="device-edit" (click)="onClickSetName5()" src="../../images/edit.png" alt="edit device"></a></li>
+          <li><a><img class="device-remove" (click)="onClickSetName5()" src="../../images/remove.png" alt="remove device"></a></li>
         </ul>
       </div>
       <div class="device-outer" data-device-id="fe975956-1a79-4cad-b720-a118abab2a9f">
-        <a routerLink="/details" class="device"
+        <a [routerLink] ="applianceNameActive[5] ? '/details' : null" id = "device6" class="device"
            title="Genauere Informationen zu dieser Webcam">
           <div class="device-image-container">
             <img class="device-image" width="180" height="180" src="../../images/webcam.svg" alt="deaktivierte Kamera">
           </div>
           <dl class="device-properties">
             <dt>Anzeigename</dt>
-            <dd class="device-displayname">Kamera Wohnzimmer</dd>
+            <dd id = "nameLabel6" *ngIf="applianceNameActive[5]" class="device-displayname">{{applianceName6}}</dd>
+            <dd class = "inputBox" *ngIf="!applianceNameActive[5]">
+              <input #input6 [value]="applianceName6" [(ngModel)]="applianceName6" type="text" id = "input6" />
+            </dd>
             <dt>Gerätetyp</dt>
             <dd class="device-type">Webcam</dd>
             <dt>Gerätename</dt>
@@ -131,13 +149,13 @@
           </dl>
         </a>
         <ul class="device-actions">
-          <li><a href=""><img class="device-edit" src="../../images/edit.png" alt="edit device"></a></li>
-          <li><a href=""><img class="device-remove" src="../../images/remove.png" alt="remove device"></a></li>
+          <li><a><img class="device-edit" (click)="onClickSetName6()" src="../../images/edit.png" alt="edit device"></a></li>
+          <li><a><img class="device-remove" (click)="onClickSetName6()" src="../../images/remove.png" alt="remove device"></a></li>
         </ul>
       </div>
 
       <div class="device-outer" data-device-id="c5a830e2-d089-427a-aaf8-5986753082aa">
-        <a routerLink="/details" class="device"
+        <a [routerLink] ="applianceNameActive[6] ? '/details' : null" id = "device7" class="device"
            title="Genauere Informationen zu diesem Rollladen">
           <div class="device-image-container">
             <img class="device-image" width="180" height="180" src="../../images/roller_shutter.svg"
@@ -145,7 +163,10 @@
           </div>
           <dl class="device-properties">
             <dt>Anzeigename</dt>
-            <dd class="device-displayname">Rollladen Wohnzimmer</dd>
+            <dd id = "nameLabel7" *ngIf="applianceNameActive[6]" class="device-displayname">{{applianceName7}}</dd>
+            <dd class = "inputBox" *ngIf="!applianceNameActive[6]">
+              <input #input7 [value]="applianceName7" [(ngModel)]="applianceName7" type="text" id = "input7" />
+            </dd>
             <dt>Gerätetyp</dt>
             <dd class="device-type">Rollladen</dd>
             <dt>Gerätename</dt>
@@ -153,12 +174,12 @@
           </dl>
         </a>
         <ul class="device-actions">
-          <li><a href=""><img class="device-edit" src="../../images/edit.png" alt="edit device"></a></li>
-          <li><a href=""><img class="device-remove" src="../../images/remove.png" alt="remove device"></a></li>
+          <li><a><img class="device-edit" (click)="onClickSetName7()" src="../../images/edit.png" alt="edit device"></a></li>
+          <li><a><img class="device-remove" (click)="onClickSetName7()" src="../../images/remove.png" alt="remove device"></a></li>
         </ul>
       </div>
       <div class="device-outer" data-device-id="f4ba6c3f-8a2c-4438-8b8d-d94084125134">
-        <a routerLink="/details" class="device"
+        <a [routerLink] ="applianceNameActive[7] ? '/details' : null" id = "device8" class="device"
            title="Genauere Informationen zu diesem Rollladen">
           <div class="device-image-container">
             <img class="device-image" width="180" height="180" src="../../images/roller_shutter.svg"
@@ -166,7 +187,10 @@
           </div>
           <dl class="device-properties">
             <dt>Anzeigename</dt>
-            <dd class="device-displayname">Rollladen Wohnzimmer</dd>
+            <dd id = "nameLabel8" *ngIf="applianceNameActive[7]" class="device-displayname">{{applianceName8}}</dd>
+            <dd class = "inputBox" *ngIf="!applianceNameActive[7]">
+              <input #input8 [value]="applianceName8" [(ngModel)]="applianceName8" type="text" id = "input8" />
+            </dd>
             <dt>Gerätetyp</dt>
             <dd class="device-type">Rollladen</dd>
             <dt>Gerätename</dt>
@@ -174,8 +198,8 @@
           </dl>
         </a>
         <ul class="device-actions">
-          <li><a href=""><img class="device-edit" src="../../images/edit.png" alt="edit device"></a></li>
-          <li><a href=""><img class="device-remove" src="../../images/remove.png" alt="remove device"></a></li>
+          <li><a><img class="device-edit" (click)="onClickSetName8()" src="../../images/edit.png" alt="edit device"></a></li>
+          <li><a><img class="device-remove" (click)="onClickSetName8()" src="../../images/remove.png" alt="remove device"></a></li>
         </ul>
       </div>
 

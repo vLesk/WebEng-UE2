@@ -86,6 +86,10 @@ footer {
   text-decoration: none;
 }
 
+.inputBox {
+    margin-left: 1%;
+}
+
 .device-actions .device-edit,
 .device-actions .device-remove {
   width: 20px;
@@ -248,7 +252,7 @@ footer {
   min-width: 0;
 }
 
-.main-container, details-main-container {
+.main-container {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
