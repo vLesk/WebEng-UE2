@@ -12,6 +12,7 @@ import { DetailsComponent }    from './components/details.component';
 import { FooterComponent }    from './components/footer.component';
 import { HeaderComponent }    from './components/header.component';
 import { AsideComponent }    from './components/aside.component';
+import {LineGraphComponent} from "./components/linegraph.component";
 
 @NgModule({
   imports: [
@@ -50,7 +51,8 @@ import { AsideComponent }    from './components/aside.component';
     DetailsComponent,
     FooterComponent,
     HeaderComponent,
-    AsideComponent
+    AsideComponent,
+    LineGraphComponent
   ],
   providers: [
   ],

@@ -21,6 +21,7 @@ var details_component_1 = require('./components/details.component');
 var footer_component_1 = require('./components/footer.component');
 var header_component_1 = require('./components/header.component');
 var aside_component_1 = require('./components/aside.component');
+var linegraph_component_1 = require("./components/linegraph.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -62,7 +63,8 @@ var AppModule = (function () {
                 details_component_1.DetailsComponent,
                 footer_component_1.FooterComponent,
                 header_component_1.HeaderComponent,
-                aside_component_1.AsideComponent
+                aside_component_1.AsideComponent,
+                linegraph_component_1.LineGraphComponent
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

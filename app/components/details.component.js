@@ -13,35 +13,11 @@ var ng2_charts_1 = require("ng2-charts");
 var DetailsComponent = (function () {
     function DetailsComponent() {
         this.angemeldet = true;
-        this.temp = 25;
         this.state = "Standby";
         this.active = "Aktiviert";
-        this.templog = "6.3.2017 10:01:30: 20 -> 25";
         this.statelog = "6.3.2017 10:02:32: Ein -> Standby";
         this.activelog = "6.3.2017 10:03:30: Aus -> An";
-        this.tempChangeTimeString = "";
         this.date = new Date();
-        this.lineChartData = [
-            { data: [20, 25, 16, 40, 26, 20, 25], label: 'Verlauf' }
-        ];
-        this.lineChartLabels = ['4.3.2017 11:05:40', '4.3.2017 13:15:55', '5.3.2017 9:00:00',
-            '5.3.2017 9:00:00', '5.3.2017 10:44:33', '5.3.2017 21:55:22', '6.3.2017 10:01:30'];
-        this.lineChartLegend = true;
-        this.lineChartOptions = {
-            responsive: true,
-            autoSkip: false
-        };
-        this.lineChartType = 'line';
-        this.lineChartColors = [
-            {
-                backgroundColor: 'rgba(205,209,216,0.4)',
-                borderColor: '#4D5360',
-                pointBackgroundColor: '#4D5360',
-                pointBorderColor: '#F1F3F8',
-                pointHoverBackgroundColor: '#4D5360',
-                pointHoverBorderColor: '#4D5360'
-            }
-        ];
         this.polarAreaChartLabels = ['Aus', 'Ein', 'Standby'];
         this.polarAreaChartData = [3, 3, 2];
         this.polarAreaLegend = true;
@@ -55,31 +31,6 @@ var DetailsComponent = (function () {
         setTimeout(function () {
             _this.chart.refresh();
         });
-    };
-    DetailsComponent.prototype.onTempChangeClicked = function (tempInput) {
-        if (tempInput <= 50 && tempInput >= 0 && tempInput != this.temp) {
-            this.date = new Date(Date.now());
-            this.tempChangeTimeString = this.date.getDate() + "." + (this.date.getMonth() + 1) + "." + this.date.getFullYear()
-                + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds();
-            this.templog += "\n" + this.tempChangeTimeString + ": " + this.temp
-                + " -> " + tempInput;
-            this.temp = tempInput;
-            var tempVals = [
-                { data: new Array(this.lineChartData[0].data.length + 1), label: "Verlauf" }
-            ];
-            var tempLabels = new Array(this.lineChartLabels.length + 1);
-            for (var i = 0; i < this.lineChartData[0].data.length; i++) {
-                tempVals[0].data[i] = this.lineChartData[0].data[i];
-            }
-            tempVals[0].data[this.lineChartData[0].data.length] = tempInput;
-            for (var i = 0; i < this.lineChartLabels.length; i++) {
-                tempLabels[i] = this.lineChartLabels[i];
-            }
-            tempLabels[this.lineChartLabels.length] = this.tempChangeTimeString;
-            this.lineChartLabels = tempLabels;
-            this.lineChartData = tempVals;
-            this.forceChartRefresh();
-        }
     };
     DetailsComponent.prototype.onStateChangeClicked = function (name) {
         if (this.state != name) {
