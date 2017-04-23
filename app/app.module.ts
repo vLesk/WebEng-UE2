@@ -13,6 +13,8 @@ import { FooterComponent }    from './components/footer.component';
 import { HeaderComponent }    from './components/header.component';
 import { AsideComponent }    from './components/aside.component';
 import {LineGraphComponent} from "./components/linegraph.component";
+import {PolarAreaGraphComponent} from "./components/polarareagraph.component";
+import {DoughnutGraphComponent} from "./components/dougnutgraph.component";
 
 @NgModule({
   imports: [
@@ -52,7 +54,9 @@ import {LineGraphComponent} from "./components/linegraph.component";
     FooterComponent,
     HeaderComponent,
     AsideComponent,
-    LineGraphComponent
+    LineGraphComponent,
+    PolarAreaGraphComponent,
+    DoughnutGraphComponent
   ],
   providers: [
   ],

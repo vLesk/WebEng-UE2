@@ -22,6 +22,8 @@ var footer_component_1 = require('./components/footer.component');
 var header_component_1 = require('./components/header.component');
 var aside_component_1 = require('./components/aside.component');
 var linegraph_component_1 = require("./components/linegraph.component");
+var polarareagraph_component_1 = require("./components/polarareagraph.component");
+var dougnutgraph_component_1 = require("./components/dougnutgraph.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -64,7 +66,9 @@ var AppModule = (function () {
                 footer_component_1.FooterComponent,
                 header_component_1.HeaderComponent,
                 aside_component_1.AsideComponent,
-                linegraph_component_1.LineGraphComponent
+                linegraph_component_1.LineGraphComponent,
+                polarareagraph_component_1.PolarAreaGraphComponent,
+                dougnutgraph_component_1.DoughnutGraphComponent
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]
