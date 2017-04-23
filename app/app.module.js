@@ -20,6 +20,7 @@ var options_component_1 = require('./components/options.component');
 var details_component_1 = require('./components/details.component');
 var footer_component_1 = require('./components/footer.component');
 var header_component_1 = require('./components/header.component');
+var aside_component_1 = require('./components/aside.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -60,7 +61,8 @@ var AppModule = (function () {
                 options_component_1.OptionsComponent,
                 details_component_1.DetailsComponent,
                 footer_component_1.FooterComponent,
-                header_component_1.HeaderComponent
+                header_component_1.HeaderComponent,
+                aside_component_1.AsideComponent
             ],
             providers: [],
             bootstrap: [app_component_1.AppComponent]

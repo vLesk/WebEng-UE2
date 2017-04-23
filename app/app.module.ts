@@ -11,6 +11,7 @@ import { OptionsComponent }    from './components/options.component';
 import { DetailsComponent }    from './components/details.component';
 import { FooterComponent }    from './components/footer.component';
 import { HeaderComponent }    from './components/header.component';
+import { AsideComponent }    from './components/aside.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import { HeaderComponent }    from './components/header.component';
     OptionsComponent,
     DetailsComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    AsideComponent
   ],
   providers: [
   ],
