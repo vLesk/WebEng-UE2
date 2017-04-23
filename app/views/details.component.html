@@ -17,7 +17,7 @@
       <!-- Steuerung für kontinuierliche Werte -->
       <div class="details-outer">
         <div class="details-image-container" >
-            <canvas baseChart id = "lineChart" width="757" height="379"
+          <canvas baseChart id = "lineChart" width="657" height="379"
                     [datasets] = "lineChartData"
                     [labels] = "lineChartLabels"
                     [legend] = "lineChartLegend"
@@ -49,7 +49,12 @@
       <!-- Steuerung für diskrete Werte -->
       <div class="details-outer">
         <div class="details-image-container">
-          <img class="details-image" src="../../images/placeholder_enum.PNG">
+          <canvas baseChart width="657" height="379"
+                  [data]="polarAreaChartData"
+                  [labels]="polarAreaChartLabels"
+                  [legend]="polarAreaLegend"
+                  [chartType]="polarAreaChartType"
+                  ></canvas>
         </div>
         <div class="details-data">
           <label class="accessibility" for="details-log">Letzte Werteänderungen</label>
@@ -77,7 +82,10 @@
       <!-- Steuerung für boolesche Werte -->
       <div class="details-outer">
         <div class="details-image-container">
-          <img class="details-image" src="../../images/placeholder_boolean.PNG">
+          <canvas baseChart
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType"></canvas>
         </div>
         <div class="details-data">
           <label class="accessibility" for="details-log">Letzte Werteänderungen</label>

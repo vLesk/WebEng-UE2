@@ -42,12 +42,19 @@ var DetailsComponent = (function () {
                 pointHoverBorderColor: '#4D5360'
             }
         ];
+        this.polarAreaChartLabels = ['Aus', 'Ein', 'Standby'];
+        this.polarAreaChartData = [3, 3, 2];
+        this.polarAreaLegend = true;
+        this.polarAreaChartType = 'polarArea';
+        this.doughnutChartLabels = ['An', 'Aus'];
+        this.doughnutChartData = [50, 70];
+        this.doughnutChartType = 'doughnut';
     }
     DetailsComponent.prototype.forceChartRefresh = function () {
         var _this = this;
         setTimeout(function () {
-            _this._chart.refresh();
-        }, 10);
+            _this.chart.refresh();
+        });
     };
     DetailsComponent.prototype.onTempChangeClicked = function (tempInput) {
         if (tempInput <= 50 && tempInput >= 0 && tempInput != this.temp) {
@@ -81,6 +88,16 @@ var DetailsComponent = (function () {
                 + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds() + ": " + this.state
                 + " -> " + name;
             this.state = name;
+            if (name == "Aus") {
+                this.polarAreaChartData[0]++;
+            }
+            else if (name == "Ein") {
+                this.polarAreaChartData[1]++;
+            }
+            else {
+                this.polarAreaChartData[2]++;
+            }
+            this.forceChartRefresh();
         }
     };
     DetailsComponent.prototype.onOnOffButtonClicked = function (active) {
@@ -106,7 +123,7 @@ var DetailsComponent = (function () {
     __decorate([
         core_1.ViewChild(ng2_charts_1.BaseChartDirective), 
         __metadata('design:type', Object)
-    ], DetailsComponent.prototype, "_chart", void 0);
+    ], DetailsComponent.prototype, "chart", void 0);
     DetailsComponent = __decorate([
         core_1.Component({
             selector: 'details-component',

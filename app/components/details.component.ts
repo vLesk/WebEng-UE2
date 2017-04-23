@@ -57,13 +57,25 @@ export class DetailsComponent {
         }
     ];
 
-    @ViewChild(BaseChartDirective) private _chart;
+    @ViewChild(BaseChartDirective) chart;
 
-    forceChartRefresh() {
+    forceChartRefresh(){
         setTimeout(() => {
-            this._chart.refresh();
-        }, 10);
+            this.chart.refresh()
+        });
     }
+
+    polarAreaChartLabels:string[] = ['Aus','Ein','Standby'];
+
+    polarAreaChartData:number[] = [3,3,2];
+
+    polarAreaLegend:boolean = true;
+
+    polarAreaChartType:string = 'polarArea';
+
+    doughnutChartLabels:string[] = ['An', 'Aus'];
+    doughnutChartData:number[] = [50,70];
+    doughnutChartType:string = 'doughnut';
 
     onTempChangeClicked(tempInput:number){
         if(tempInput <= 50 && tempInput >= 0 && tempInput != this.temp){
@@ -108,6 +120,16 @@ export class DetailsComponent {
                 + " " + this.date.getHours() + ":" + this.date.getMinutes() + ":" + this.date.getSeconds() +": " + this.state
                 + " -> " + name;
             this.state = name;
+
+            if(name == "Aus"){
+                this.polarAreaChartData[0]++;
+            } else if(name == "Ein"){
+                this.polarAreaChartData[1]++;
+            } else {
+                this.polarAreaChartData[2]++;
+            }
+
+            this.forceChartRefresh();
         }
     }
 
