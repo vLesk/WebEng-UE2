@@ -109,7 +109,7 @@ var DetailsComponent = (function () {
     ], DetailsComponent.prototype, "_chart", void 0);
     DetailsComponent = __decorate([
         core_1.Component({
-            selector: 'details',
+            selector: 'details-component',
             templateUrl: '/app/views/details.component.html'
         }), 
         __metadata('design:paramtypes', [])

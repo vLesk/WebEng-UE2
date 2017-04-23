@@ -4,7 +4,7 @@ import {BaseChartDirective} from "ng2-charts";
 import { HeaderComponent } from './header.component';
 
 @Component({
-  selector: 'details',
+  selector: 'details-component',
   templateUrl: '/app/views/details.component.html'
 })
 
